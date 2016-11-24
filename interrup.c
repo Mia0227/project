@@ -8,10 +8,9 @@
 #define KEY1_UP   (LPC_GPIO2->DATA&(1<<6))==(1<<6)
 
 void delay(){  
-	long int i,j;
-	for(i=480;i>0;i--){
-		for(j=1000;j>0;j--);
-	}	
+long int i;
+for(i=330000;i>0;i--){       //0.25S
+}	
 }
 
 void led_init()
@@ -37,7 +36,7 @@ void PIOINT2_IRQHandler()
 		 	
 		 
 		 if((LPC_GPIO2->DATA&(1<<6))==0){
-			delay();
+			
 			while((LPC_GPIO2->DATA&(1<<6))==0){
 				 
 					 LED1_ON;
