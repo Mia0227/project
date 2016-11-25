@@ -2,5 +2,14 @@
 #include "LED2.h"   
 
 int main(void){
-	LED_blinky(1,8,4800000);//LED_blinky(int portNum,int bitPosi,long int i)
+	SystemInit();				//initial system
+	LED_INIT();					//set the P1.8 output pin 
+
+	while(1)
+	{
+	LED_ON();						//set up led(P1.8) led on
+	delay(4800000);			//delay 0.5s	
+	LED_OFF();					//set up led(P1.8) led off
+	delay(4800000);			//delay 0.5s
+	}
 }
